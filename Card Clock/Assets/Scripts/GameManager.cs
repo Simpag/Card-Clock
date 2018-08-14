@@ -37,6 +37,9 @@ public class GameManager : MonoBehaviour {
     private Text deckSizeText;
 
     [SerializeField]
+    private Button playShownCardButton;
+
+    [SerializeField]
     private int maxCardPositions;
     private int cardPosition = 0;
     private int deckSize;
@@ -56,29 +59,37 @@ public class GameManager : MonoBehaviour {
             cardsInPosition[i] = new List<GameObject>();
     }
 
-    private void Update()
+    public void ShowNextCard()
     {
-        if (Input.GetMouseButtonDown(0) && !finishedGame)
-        {
-            int randomCard = Random.Range(0, deckSize);
-            if (instantWin)
-                randomCard = 0;
-            
-            PlayCard(randomCard);
-        }
+        int randomCard = Random.Range(0, deckSize);
+        GameObject _cardSpawned = cardDeck.GetComponent<CardDeck>().SpawnCard(randomCard, deckPosition);
+        deckSize--;
+        deckSizeText.text = deckSize.ToString();
+
+        playShownCardButton.gameObject.SetActive(true);
     }
 
-    private void ShowCard(int _cardIndex)
+    public void PlayShowedCard()
     {
-        
+        PlayCardOnNextPile(cardDeck.GetComponent<CardDeck>().DeckSize - 1);
+        playShownCardButton.gameObject.SetActive(false);
     }
 
-    private void RemoveShowCard(int _cardIndex)
+    public void PlayCard()
     {
-        
+        if (finishedGame)
+            return;
+
+        int randomCard = Random.Range(0, deckSize);
+        if (instantWin)
+            randomCard = 0;
+
+        PlayCardOnNextPile(randomCard);
+        deckSize--;
+        deckSizeText.text = deckSize.ToString();
     }
 
-    private void PlayCard(int _cardIndex)
+    private void PlayCardOnNextPile(int _cardIndex)
     {
         if (deckSize <= 0)
         {
@@ -87,10 +98,8 @@ public class GameManager : MonoBehaviour {
         }
 
         GameObject _cardSpawned = cardDeck.GetComponent<CardDeck>().SpawnCard(_cardIndex, spawnPosition[cardPosition]);
-        deckSize--;
+        
         cardsInPosition[cardPosition].Add(_cardSpawned);
-
-        deckSizeText.text = deckSize.ToString();
 
         IsCardOnRightPile(_cardSpawned);
 

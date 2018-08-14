@@ -23,9 +23,14 @@ public class CardDeck : MonoBehaviour {
         transform.GetChild(_cardIndex).gameObject.GetComponentInChildren<SpriteRenderer>().sprite = transform.GetChild(_cardIndex).GetComponent<Card>().CardSprite;
         transform.GetChild(_cardIndex).gameObject.GetComponentInChildren<SpriteRenderer>().sortingOrder = orderInLayer++;
         transform.GetChild(_cardIndex).SetAsLastSibling();
-        activeChildren++;
 
         return rGo;
+    }
+
+    public void RemoveCard(GameObject _card)
+    {
+        _card.SetActive(false);
+        _card.transform.SetAsFirstSibling();
     }
 }
 

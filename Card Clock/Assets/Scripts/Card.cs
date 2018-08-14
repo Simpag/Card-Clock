@@ -16,6 +16,16 @@ public class Card : MonoBehaviour {
         Spades
     }
 
+    private void OnDisable()
+    {
+        transform.parent.GetComponent<CardDeck>().activeChildren--;
+    }
+
+    private void OnEnable()
+    {
+        transform.parent.GetComponent<CardDeck>().activeChildren++;
+    }
+
     [SerializeField]
     private int cardNumber;
     [SerializeField]

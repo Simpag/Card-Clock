@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio for Mac
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Card Clock", "Card Clock.csproj", "{4D0C960D-89A7-5B3D-E047-EA864C8B3B1B}"
 EndProject
 Global
