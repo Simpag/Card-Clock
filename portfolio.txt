@@ -1,7 +1,7 @@
 {
-  "modalname": "test modal 1",
+  "modalname": "CardClockModal",
   "ProjectName" : "Card Clock",
   "ProjectTopic" : "Unity Game",
-  "ProjectDescription" : "This is the description of the repo",
+  "ProjectDescription" : "This is the description of the repo. I think I can add html tags and such but I dont know if it's needed tbh.",
   "Date" : "12/04-2019"
 }
