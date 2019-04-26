@@ -1,7 +1,8 @@
 {
-  "modalname": "CardClockModal",
+  "Modalname": "CardClockModal",
   "ProjectName" : "Card Clock",
   "ProjectTopic" : "Unity Game",
-  "ProjectDescription" : "This is the description of the repo. I think I can add html tags and such but I dont know if it's needed tbh.",
-  "Date" : "12/04-2019"
+  "ProjectDescription" : "This was my first mobile app. I built it just to test the touch functions in Unity.",
+  "Date" : "12/04-2019",
+  "Image" : "https://www.propdog.co.uk/image/cache/data/cards/Wall-Clock-500x500.jpg"
 }
