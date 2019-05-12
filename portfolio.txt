@@ -2,7 +2,7 @@
   "Modalname": "CardClockModal",
   "ProjectName" : "Card Clock",
   "ProjectTopic" : "Unity Game",
-  "ProjectDescription" : "This was my first mobile app. I built it just to test the touch functions in Unity.",
+  "ProjectDescription" : "Det här var mitt första försök på att göra en mobilapp i unity. Jag byggde det för att testa hur unity hanterar touch.",
   "Date" : "12/04-2019",
   "Image" : "https://www.propdog.co.uk/image/cache/data/cards/Wall-Clock-500x500.jpg"
 }
